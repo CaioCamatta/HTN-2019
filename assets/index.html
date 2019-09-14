@@ -13,9 +13,26 @@
   </head>
   <body>
       <div id="mydiv">
-          <h3>Hack the North: Are you aware?</h3>
-            <button class="button">Yes</button>
-            <button class="button">No</button>
-        </div>
+        <h3>Hack the North: Are you aware?</h3>
+        <button class="button">Yes</button>
+        <button class="button">No</button>
+        <a class="btn btn-primary" name = "submit" id = "submit" href="#">submit</a>
+      </div>
+      <script
+  src="https://code.jquery.com/jquery-3.4.1.min.js"
+  integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+  crossorigin="anonymous"></script>
+      <script>
+        $(document).ready( function() {
+       $('#submit').click(function() {
+          $.ajax({
+                type: 'POST',
+               contentType: 'application/json',
+               data: JSON.stringify("Testsss"),
+               dataType: 'json',
+           });
+       });
+ });
+   </script>
   </body>
   </html>

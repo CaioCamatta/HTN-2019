@@ -7,7 +7,7 @@ def hello_world():
     return 'Hello Hack the North!'
 
 @app.route('/questions/N77G')
-def hello_world():
+def questions():
     return 'Questions page!'
 
 if __name__ == '__main__':

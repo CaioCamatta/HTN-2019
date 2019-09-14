@@ -88,7 +88,7 @@
       <h3>Congratulations</h3>
       <form>
       </br>
-        name = <input type="text" name = "uname"> </br>
+        <input id="name" type="text" name = "uname" placeholder="Name"> </br>
       </br></br>
         <input type = "submit" id = "s2" value = "Submit">
 
@@ -214,9 +214,12 @@ var loveListener = createButtonListener(true);
 nope.addEventListener('click', nopeListener);
 love.addEventListener('click', loveListener);
 
+var name = document.getElementById("name").value 
 
 $(document).ready( function() {
   $('#submit').click(function() {
+    var name = document.getElementById("name").value
+    arr.push(name)
     $.ajax({
       type: 'POST',
       contentType: 'application/json',

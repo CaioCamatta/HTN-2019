@@ -1,0 +1,25 @@
+body {
+    background-color: lightgray;
+    font-family: 'Noto Sans', sans-serif;
+}
+
+#mydiv {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 65%;
+    height: 450px;
+    border: 5px solid black;
+    border-radius: 40px;
+    overflow: auto;
+    text-align: center;
+    background: linear-gradient(white,lightblue);
+
+}
+
+h3 {
+    padding: 10px;
+    font-size: 2em;
+}
+

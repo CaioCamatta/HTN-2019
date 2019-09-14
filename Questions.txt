@@ -1,0 +1,40 @@
+Could base questions off of Top 10 Workplace values, or based on HR issues.
+Top 10 Workplace Value:
+1. Strong Work Ethics
+2. Dependability
+3. Positive attitude
+4. Adaptability
+5. Honesty and integrity
+6. Self- Motivated
+7. Motivated to Grow and Learn
+8. Strong Self-Confidence
+9. Professionalism
+10. Loyalty
+(maybe doesn't have true or false answers)
+
+Focus on an HR issue: 
+-Diversity and Discrimination. (Easier to create true and False)
+-Harrassment
+-Sustainability:
+1. Was the total generation of municipal solid waste in 2015 was 262.4 million tons (T)
+2. You and Your friend just ate lunch at Hack the North. After eating, you throw your 
+  paper container into the recycling and your friend throws theirs into the garbage. 
+  Was your friend right in throwing out theirs in the garbage? (T)
+3.To clean a peanut butter jar, all you have to do is: 
+  Fill with hot water and pour it out. (F)
+4.Alkaline Batteries and Rechargeable/ lithium Ion batteries are disposable in the
+  common trash? (F)
+5.Are Bioplastics really compostible when they are labeled as compostible? (T)
+6.In the Canada-Philippines waste dispute, a Newfoundland recycling company 
+  send 103 labeled household waste containers to Manila, Philippines.(F)
+7.The 38 square Kilometer Icelandic Glacier, Okjökull has been reduced to a shield volcano
+  with no glacial coverage.(T)
+8.CFL bulbs (Compound Flourescant Light bulbs) can be thrown out with household waste 
+  because unlike incandescant lights, they do not contain mercury. (F)
+9.Plastic straws are responsible for 46% of all Ocean Plastic and reportedly 640,000 tons 
+  are polluting the ocean(F)
+10.There is an ozone hole in the Upper Stratosphere in Antarctica caused by a depletion of 
+   O3 molocules due to man-made chlorofluorocarbons (CFCs) and halons being realeased
+   into the atmosphere. However, the ozone layer might replenish itself by 2050-2070.(T)
+ 
+

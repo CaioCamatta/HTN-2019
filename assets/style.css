@@ -23,3 +23,10 @@ h3 {
     font-size: 2em;
 }
 
+.yesbtn {
+    color: green;
+}
+
+.nobtn {
+    color: red;
+}

@@ -21,11 +21,13 @@
   </div>
 
   <div class="tinder--cards">
+    
     <div class="tinder--card">
       <img src="{{url_for('static', filename='images/htnq1.jpeg')}}">
       <h3>Hack The North Q1</h3>
       <p>The total generation of municipal solid waste in 2015 was 262.4 million tons. </p>
     </div>
+
     <div class="tinder--card">
       <img src="{{url_for('static', filename='images/htnq2.png')}}">
       <h3>Hack The North Q2</h3>
@@ -81,9 +83,18 @@
           O3 molocules due to man-made chlorofluorocarbons (CFCs) and halons being realeased
           into the atmosphere. However, the ozone layer might replenish itself by 2050-2070.</p>
     </div>
-    <div class="tinder--card">
-        <a class="btn btn-primary" name = "submit" id = "submit" href="#">submit</a>
-    </div>
+    <div class="starter-card">
+      <img class = "qimage" src="assets/images/moral.png">
+      <h3>Congratulations</h3>
+      <form>
+      </br>
+        <input id="name" type="text" name = "uname" placeholder="Name"> </br>
+      </br></br>
+        <input type = "submit" id = "s2" value = "Submit">
+
+
+      </form>
+  </div>
   </div>
 
   <div class="tinder--buttons">
@@ -203,9 +214,12 @@ var loveListener = createButtonListener(true);
 nope.addEventListener('click', nopeListener);
 love.addEventListener('click', loveListener);
 
+var name = document.getElementById("name").value 
 
 $(document).ready( function() {
   $('#submit').click(function() {
+    var name = document.getElementById("name").value
+    arr.push(name)
     $.ajax({
       type: 'POST',
       contentType: 'application/json',

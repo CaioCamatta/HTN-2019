@@ -34,6 +34,7 @@ Focus on an HR issue:
 9.Plastic straws are responsible for 46% of all Ocean Plastic and reportedly 640,000 tons 
   are polluting the ocean(F)
 10.There is an ozone hole in the Upper Stratosphere in Antarctica caused by a depletion of 
-   O3 molocules. However, the ozone layer might replenish itself by 2050-2070.(T)
+   O3 molocules due to man-made chlorofluorocarbons (CFCs) and halons being realeased
+   into the atmosphere. However, the ozone layer might replenish itself by 2050-2070.(T)
  
 

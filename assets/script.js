@@ -1,5 +1,6 @@
 'use strict';
 
+var arr = []
 var tinderContainer = document.querySelector('.tinder');
 var allCards = document.querySelectorAll('.tinder--card');
 var nope = document.getElementById('nope');
@@ -61,6 +62,9 @@ allCards.forEach(function (el) {
       var yMulti = event.deltaY / 80;
       var rotate = xMulti * yMulti;
 
+      var yesorno = event.deltaX > 0 ? true: false;
+      arr.push(yesorno)
+      console.log(arr)
       event.target.style.transform = 'translate(' + toX + 'px, ' + (toY + event.deltaY) + 'px) rotate(' + rotate + 'deg)';
       initCards();
     }
@@ -80,8 +84,12 @@ function createButtonListener(love) {
 
     if (love) {
       card.style.transform = 'translate(' + moveOutWidth + 'px, -100px) rotate(-30deg)';
+      arr.push(true)
+      console.log(arr)
     } else {
       card.style.transform = 'translate(-' + moveOutWidth + 'px, -100px) rotate(30deg)';
+      arr.push(false)
+      console.log(arr)
     }
 
     initCards();
@@ -95,3 +103,4 @@ var loveListener = createButtonListener(true);
 
 nope.addEventListener('click', nopeListener);
 love.addEventListener('click', loveListener);
+

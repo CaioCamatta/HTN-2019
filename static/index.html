@@ -3,13 +3,13 @@
 <head>
   <meta charset="UTF-8">
   <title>Awareness HTN</title>
-  <link rel="stylesheet" type="text/css" href="assets/style.css"/>
-  <link rel= "stylesheet" type = "text/css" href = "assets/phoneset.css"/>
+  <link rel="stylesheet" type="text/css" href="{{url_for('static', filename='style.css')}}"/>
+  <link rel= "stylesheet" type = "text/css" href = "{{url_for('static', filename='phoneset.css')}}"/>
   <meta name="viewport" content="width=device-width, initial-scale=1"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
   <link href="https://fonts.googleapis.com/css?family=Noto+Sans&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="assets/style2.css">
-  <link rel="stylesheet" type="text/css" href="assets/css/default.css" />
-  <link rel="stylesheet" type="text/css" href="assets/css/component.css" /> 
+  <link rel="stylesheet" href="{{url_for('static', filename='style2.css')}}">
+  <link rel="stylesheet" type="text/css" href="{{url_for('static', filename='css/default.css')}}" />
+  <link rel="stylesheet" type="text/css" href="{{url_for('static', filename='css/component.css')}}" /> 
   <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css'>
 </head>
 <body>
@@ -22,60 +22,60 @@
 
   <div class="tinder--cards">
     <div class="tinder--card">
-      <img src="assets/images/htnq1.jpeg">
+      <img src="{{url_for('static', filename='images/htnq1.jpeg')}}">
       <h3>Hack The North Q1</h3>
       <p>The total generation of municipal solid waste in 2015 was 262.4 million tons. </p>
     </div>
     <div class="tinder--card">
-      <img src="assets/images/htnq2.png">
+      <img src="{{url_for('static', filename='images/htnq2.png')}}">
       <h3>Hack The North Q2</h3>
       <p>You and Your friend just ate lunch at Hack the North. After eating, you throw your 
         paper container into the recycling and your friend throws theirs into the garbage. 
         Was your friend right in throwing out theirs in the garbage?</p>
     </div>
     <div class="tinder--card">
-      <img src="assets/images/htnq3.png">
+      <img src="{{url_for('static', filename='images/htnq3.png')}}">
       <h3>Hack The North Q3</h3>
       <p>To clean a peanut butter jar, all you have to do is: 
           Fill with hot water and pour it out.</p>
     </div>
     <div class="tinder--card">
-      <img src="assets/images/htnq4.png">
+      <img src="{{url_for('static', filename='images/htnq4.png')}}">
       <h3>Hack The North Q4</h3>
       <p>Alkaline Batteries and Rechargeable/ lithium Ion batteries are disposable in the
         common trash? </p>
     </div>
     <div class="tinder--card">
-      <img src="assets/images/htnq5.png">
+      <img src="{{url_for('static', filename='images/htnq5.png')}}">
       <h3>Hack the North Q5</h3>
       <p>Are Bioplastics really compostible when they are labeled as compostible?</p>
     </div>
     <div class="tinder--card">
-        <img src="assets/images/htnq6.png">
+        <img src="{{url_for('static', filename='images/htnq6.png')}}">
         <h3>Hack The North Q6</h3>
         <p>In the Canada-Philippines waste dispute, a Newfoundland recycling company 
           send 103 labeled household waste containers to Manila, Philippines</p>
     </div>
     <div class="tinder--card">
-        <img src="assets/images/htnq7.png">
+        <img src="{{url_for('static', filename='images/htnq7.png')}}">
         <h3>Hack The North Q7</h3>
         <p>The 38 square Kilometer Icelandic Glacier, Okjökull has been reduced to a shield volcano
           with no glacial coverage.</p>
     </div>
     <div class="tinder--card">
-        <img class = "qimage" src="assets/images/htnq8.png">
+        <img class = "qimage" src="{{url_for('static', filename='images/htnq8.png')}}">
         <h3>Hack The North Q8 </h3>
         <p>CFL bulbs (Compound Flourescant Light bulbs) can be thrown out with household waste 
           because unlike incandescant lights, they do not contain mercury. </p>
     </div>
     <div class="tinder--card">
-        <img class = "qimage" src="assets/images/htnq9.png">
+        <img class = "qimage" src="{{url_for('static', filename='images/htnq9.png')}}">
         <h3>Hack The North Q9</h3>
         <p>Plastic straws are responsible for 46% of all Ocean Plastic and reportedly 640,000 tons 
           are polluting the ocean</p>
     </div>
     <div class="tinder--card">
-        <img class = "qimage" src="assets/images/htnq10.png">
+        <img class = "qimage" src="{{url_for('static', filename='images/htnq10.png')}}">
         <h3>Hack The North Q10</h3>
         <p>There is an ozone hole in the Upper Stratosphere in Antarctica caused by a depletion of 
           O3 molocules due to man-made chlorofluorocarbons (CFCs) and halons being realeased
@@ -93,7 +93,7 @@
 </div>
 <!-- partial -->
   <script src='https://hammerjs.github.io/dist/hammer.min.js'></script>
-<!-- <script  src="assets/script.js"></script> -->
+<!-- <script  src="{{url_for('static', filename='css/component.css')}}script.js"></script> -->
 <script
   src="https://code.jquery.com/jquery-3.4.1.min.js"
   integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="

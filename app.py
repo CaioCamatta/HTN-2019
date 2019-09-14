@@ -2,7 +2,7 @@ from flask import Flask, request, render_template
 import firebase_admin
 from firebase_admin import credentials,firestore
 
-app = Flask(__name__, template_folder='assets')
+app = Flask(__name__, template_folder='static')
 cred = credentials.Certificate("./ServiceAccountKey.json")
 default_app = firebase_admin.initialize_app(cred)
 
@@ -12,25 +12,25 @@ def submit_firebase(id, data):
     doc_ref = db.collection(u'HackTheNorth').document(f'questions-{id}')
 
     doc_ref.set({
-        u'name': f"{id}",
+        u'name': f"{data[10]}",
         u'answers': {
-            "1":u"",
-            "2":u"",
-            "3":u"",
-            "4":u"",
-            "5":u"",
-            "6":u"",
-            "7":u"",
-            "8":u"",
-            "9":u"",
-            "10":u"",
+            "1":f"{data[0]}",
+            "2":f"{data[1]}",
+            "3":f"{data[2]}",
+            "4":f"{data[3]}",
+            "5":f"{data[4]}",
+            "6":f"{data[5]}",
+            "7":f"{data[6]}",
+            "8":f"{data[7]}",
+            "9":f"{data[8]}",
+            "10":f"{data[9]}",
         },
     })
 
 def check_done(id):
     
     db = firestore.client()
-    doc_ref = db.collection(u'HackTheNorth').document(f'questions-{id}-done')
+    doc_ref = db.collection(u'HackTheNorth').document(f'questions-{id}-done')   
     data = doc_ref.get().to_dict()
     print("data: ",data)
 
@@ -62,13 +62,10 @@ def questions():
     return render_template("index.html")
 
 
-@app.route('/questions/N77G/done', methods=['GET'])
-def questions_done():
-    page_code = str(request.path[-9:-5])
-    print(page_code)
-
+@app.route('/questions/<page_id>/done', methods=['GET'])
+def questions_done(page_id):
     db = firestore.client()
-    doc_ref = db.collection(u'HackTheNorth').document(f'questions-{page_code}-done')
+    doc_ref = db.collection(u'HackTheNorth').document(f'questions-{page_id}-done')
 
     doc_ref.set({
         u'done': "True",
@@ -76,13 +73,10 @@ def questions_done():
 
     return "Changed to DONE"
 
-@app.route('/questions/N77G/notdone', methods=['GET'])
+@app.route('/questions/<page_id>/notdone', methods=['GET'])
 def questions_notdone():
-    page_code = str(request.path[-12:-8])
-    print(page_code)
-
     db = firestore.client()
-    doc_ref = db.collection(u'HackTheNorth').document(f'questions-{page_code}-done')
+    doc_ref = db.collection(u'HackTheNorth').document(f'questions-{page_id}-done')
 
     doc_ref.set({
         u'done': "False",

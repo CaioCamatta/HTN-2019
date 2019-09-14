@@ -14,10 +14,12 @@ body {
     border-radius: 40px;
     overflow: auto;
     text-align: center;
+    background: linear-gradient(white,lightblue);
+
 }
 
 h3 {
     padding: 10px;
-    font-size: 3em;
+    font-size: 2em;
 }
 

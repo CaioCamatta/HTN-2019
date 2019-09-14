@@ -15,7 +15,7 @@ response = getQuote()
 question = response['question']
 answer = response['answer']
 
-doc_ref = db.collection(u'sampleData').document(u'questions')
+doc_ref = db.collection(u'HackTheNorth').document(u'questions-N77G')
 doc_ref.set({
     u'name': u"",
     u'id': u"",

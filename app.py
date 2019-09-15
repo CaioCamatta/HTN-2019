@@ -84,7 +84,8 @@ def questions():
             actual_doc.to_dict()['answers']['9'],
             actual_doc.to_dict()['answers']['10']
         ]
-        
+        name_list = []
+
         for key in participant_doc.to_dict().keys():
             # print(key)
             try:
@@ -92,6 +93,15 @@ def questions():
                     answer_list.append(key)
             except:
                 pass
+            try:
+                if key[:4] == 'name':
+                    name_list.append(key)
+            except:
+                pass
+
+        leaderboards = []
+        participant_marks = 0
+
             
         # print(answer_list)
         
@@ -115,7 +125,15 @@ def questions():
                     all_answers_given[i].append('True')
                 else:
                     all_answers_given[i].append('False')
-                    
+            
+            username = "name_" + key[-6:]
+            name_of_person = participant_doc.to_dict()[username]
+            temp = {float(participant_marks)/len(correct_answers) *100 : name_of_person}
+            leaderboards.append(temp)
+            participant_marks = 0
+
+            
+
         
         individual_average_mark = 0
         final_average_mark = []
@@ -127,8 +145,25 @@ def questions():
                     
             final_average_mark.append(float(individual_average_mark)/len(i) *100)
             individual_average_mark = 0
+
+        inv_map = []
+        for i in leaderboards:
+            inv_map.append({v: k for k, v in i.items()})
+        # d = inv_map
+        
+        # print(inv_map)
+        result = {}
+        for d in inv_map:
+            result.update(d)
+        all_participants = {}
+        for key, value in sorted(result.items(), key=lambda item: item[1],reverse=True):
+            b = {key: value}
+            all_participants.update(b)
+        
+        
+        final_five = list(all_participants.keys())[:5]
             
-        return render_template("results.html", data=[int(i) for i in final_average_mark])
+        return render_template("results.html", data=[int(i) for i in final_average_mark], names=final_five)
         
     return render_template("index.html")
 

@@ -14,18 +14,9 @@
   <body>
       <div id="mydiv"> 
         <h1>Hack the North: Are you aware?</h1>
-        <form>
-            
             <input placeholder="Enter Quiz Code..." type="text" id="codebt" name = "Enter Code"></br></br>
              <input type="submit" id="subbt" value="Submit"></br></br>
 
-
-            <!--<input id = "subimg" type="image" src="assets/images/moral.png" height = 25% width = 25% name="move">-->
-            
-          
-
-
-        </form>
 
       </div>
 
@@ -33,5 +24,13 @@
   src="https://code.jquery.com/jquery-3.4.1.min.js"
   integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
   crossorigin="anonymous"></script>
+  <script>
+  $('#subbt').click(function() {
+    var code = document.getElementById("codebt").value 
+    console.log(code)
+
+    document.location.href = '/questions/' + code
+  });
+  </script>
   </body>
   </html>

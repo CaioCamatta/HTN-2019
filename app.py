@@ -35,7 +35,6 @@ def check_done(id):
     db = firestore.client()
     doc_ref = db.collection(u'HackTheNorth').document(f'questions-{id}-done')   
     data = doc_ref.get().to_dict()
-    print("data: ",data)
 
     if data['done'] == "True":
         return True
@@ -54,26 +53,25 @@ def questions():
 
     if request.method == 'POST':
         data = request.json
-        print(data)
-        print(request.path[-4:])
         submit_firebase(page_code, data)
         return render_template("index.html")
     
     elif check_done(page_code):
         all_answers_given = [[],[],[],[],[],[],[],[],[],[]]
-​
+        
+        db = firestore.client()
         participant_ref = db.collection(u'HackTheNorth').document(u"questions-N77G") 
         actual_ref = db.collection(u'HackTheNorth').document(u"questions-N77G-correct")
         
         participant_doc = participant_ref.get()
         actual_doc = actual_ref.get()
         # print(participant_doc.to_dict())
-    ​
+        
         length_of_doc = len(actual_doc.to_dict()['answers'])
         # print(participant_doc.to_dict()['answers_2'])
-    ​
+        
         answer_list = []
-    ​
+        
         correct_answers = [
             actual_doc.to_dict()['answers']['1'],
             actual_doc.to_dict()['answers']['2'], 
@@ -86,8 +84,7 @@ def questions():
             actual_doc.to_dict()['answers']['9'],
             actual_doc.to_dict()['answers']['10']
         ]
-    ​
-    ​
+        
         for key in participant_doc.to_dict().keys():
             # print(key)
             try:
@@ -95,11 +92,11 @@ def questions():
                     answer_list.append(key)
             except:
                 pass
-    ​
+            
         # print(answer_list)
-    ​
+        
         for key in answer_list: 
-    ​
+            
             guesses = [
                 participant_doc.to_dict()[key]['1'],
                 participant_doc.to_dict()[key]['2'], 
@@ -112,34 +109,27 @@ def questions():
                 participant_doc.to_dict()[key]['9'],
                 participant_doc.to_dict()[key]['10']
             ]
-    ​
             
-        
             for i in range(0, len(correct_answers)):
                 if guesses[i] == correct_answers[i]:
                     all_answers_given[i].append('True')
                 else:
                     all_answers_given[i].append('False')
-    ​
+                    
         
-    ​
-        print(all_answers_given)
-    ​
         individual_average_mark = 0
         final_average_mark = []
-    ​
+        
         for i in all_answers_given:
             for j in i:
                 if j == 'True':
                     individual_average_mark += 1
-    ​
-        
+                    
             final_average_mark.append(float(individual_average_mark)/len(i) *100)
             individual_average_mark = 0
-    ​
-        print(final_average_mark)
-        return render_template("index.html", data=final_average_mark)
-
+            
+        return render_template("results.html", data=[int(i) for i in final_average_mark])
+        
     return render_template("index.html")
 
 

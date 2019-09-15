@@ -6,7 +6,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.3.0/Chart.min.js"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
     <link href="https://fonts.googleapis.com/css?family=Noto+Sans&display=swap" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="results.css">
+    <link rel="stylesheet" type="text/css" href="{{url_for('static', filename='results.css')}}">
   </head>
   <body>
     <div class="wrapper">
@@ -18,7 +18,7 @@
             True, according to an EPA report done in 2015, the total generation was 262.4 million tons averaging 4.48 pounds of trash/person/day
           </h4>
           <div style="text-align: center">
-          <h1 class="percent"><span style="color: green; font-weight: 600"> 89%</span></h1><h2 class="percent"> correct</h2>
+          <h1 class="percent"><span style="color: green; font-weight: 600"> {{data[0]}}%</span></h1><h2 class="percent"> Correct</h2>
         </div>
         </div>
         <hr style = "border-top: dashed 1px;"/>
@@ -29,7 +29,7 @@
           Was your friend right in throwing out theirs in the garbage?</h2>
           <h4>True, while plastics,glass, and metals burn off food residue, paper products absorb it and should be disposed of or composted</u></h4>
           <div style="text-align: center">
-              <h1 class="percent"><span style="color: green; font-weight: 600"> 76%</span></h1><h2 class="percent"> correct</h2>
+              <h1 class="percent"><span style="color: green; font-weight: 600"> {{data[1]}}%</span></h1><h2 class="percent"> Correct</h2>
             </div>
       </div>
       <hr style = "border-top: dashed 1px;"/>
@@ -40,7 +40,7 @@
             <h4>False, to properly dispose of peanut butter, without using a high pressure hose, just scrap out as much peanut butter as you can,
                fill half-way with hot water, add dishsoap, put the lid on and shake rapidly. Then empty out the water and dispose of the jar. </u></h4>
                <div style="text-align: center">
-                  <h1 class="percent"><span style="color: green; font-weight: 600"> 82%</span></h1><h2 class="percent"> correct</h2>
+                  <h1 class="percent"><span style="color: green; font-weight: 600"> {{data[2]}}%</span></h1><h2 class="percent"> Correct</h2>
                 </div>
                
       </div>
@@ -52,7 +52,7 @@
             <h4> False, while dead Alkaline batteries are reported to be ok to dispose of in regular trash, Lithium Ion batteries have to be 
               recycled in the proper facilities </u></h2>
               <div style="text-align: center">
-                  <h1 class="percent"><span style="color: green; font-weight: 600"> 89%</span></h1><h2 class="percent"> correct</h2>
+                  <h1 class="percent"><span style="color: green; font-weight: 600"> {{data[3]}}%</span></h1><h2 class="percent"> Correct</h2>
                 </div>
             </div>
       <hr style = "border-top: dashed 1px;"/>
@@ -63,7 +63,7 @@
         </h2>
         <h4>  True, Bioplastics are often made with plants making them biodegradable</u></h4>
         <div style="text-align: center">
-            <h1 class="percent"><span style="color: green; font-weight: 600"> 89%</span></h1><h2 class="percent"> correct</h2>
+            <h1 class="percent"><span style="color: green; font-weight: 600"> {{data[4]}}%</span></h1><h2 class="percent"> Correct</h2>
           </div>
       </div>
       <hr style = "border-top: dashed 1px;"/>
@@ -73,7 +73,7 @@
             send 103 labeled household waste containers to Manila, Philippines.</h2>
         <h4>   False, a VANCOUVER recycling company shipped over waste containers marked as recycling containers to the Philippines.</u></h4>
         <div style="text-align: center">
-            <h1 class="percent"><span style="color: green; font-weight: 600"> 89%</span></h1><h2 class="percent"> correct</h2>
+            <h1 class="percent"><span style="color: green; font-weight: 600"> {{data[5]}}%</span></h1><h2 class="percent"> Correct</h2>
           </div>
       </div>
       <hr style = "border-top: dashed 1px;"/>
@@ -83,7 +83,7 @@
             with no glacial coverage</h2>
             <h4>    True, just recently Iceland held a funeral for the no longer existent glacier</u></h4>
             <div style="text-align: center">
-          <h1 class="percent"><span style="color: green; font-weight: 600"> 89%</span></h1><h2 class="percent"> correct</h2>
+          <h1 class="percent"><span style="color: green; font-weight: 600"> {{data[6]}}%</span></h1><h2 class="percent"> Correct</h2>
         </div>
       </div>
       <hr style = "border-top: dashed 1px;"/>
@@ -95,7 +95,7 @@
             at the designated drop-off locations near you
           </u></h4>
           <div style="text-align: center">
-              <h1 class="percent"><span style="color: green; font-weight: 600"> 89%</span></h1><h2 class="percent"> correct</h2>
+              <h1 class="percent"><span style="color: green; font-weight: 600"> {{data[7]}}%</span></h1><h2 class="percent"> Correct</h2>
             </div>
       </div>
       <hr style = "border-top: dashed 1px;"/>
@@ -109,7 +109,7 @@
                 False, plastic nets are the major problem of Ocean Plastics and the main killer of Sea Turtles</u>
         </h4>
         <div style="text-align: center">
-            <h1 class="percent"><span style="color: green; font-weight: 600"> 89%</span></h1><h2 class="percent"> correct</h2>
+            <h1 class="percent"><span style="color: green; font-weight: 600"> {{data[8]}}%</span></h1><h2 class="percent"> Correct</h2>
           </div>
       </div>
       <hr style = "border-top: dashed 1px;"/>
@@ -124,13 +124,13 @@
                  True, the Ozone layer naturally replenishes itself and scientists estimate that the Arctic Ozone Hole will be reformed by 2050-2070</u>
         </h4>
         <div style="text-align: center">
-            <h1 class="percent"><span style="color: green; font-weight: 600"> 89%</span></h1><h2 class="percent"> correct</h2>
+            <h1 class="percent"><span style="color: green; font-weight: 600"> {{data[9]}}%</span></h1><h2 class="percent"> Correct</h2>
           </div>
       </div>
       <hr style = "border-top: dashed 1px;"/>
       
       <!-- <canvas id="myChart" width="1600" height="900"></canvas> -->
     </div>
-    <script src="results.js"></script>
+    <script src="{{url_for('static', filename='results.js')}}"></script>
   </body>
 </html>

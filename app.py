@@ -145,7 +145,7 @@ def questions_done(page_id):
     return "Changed to DONE"
 
 @app.route('/questions/<page_id>/notdone', methods=['GET'])
-def questions_notdone():
+def questions_notdone(page_id):
     db = firestore.client()
     doc_ref = db.collection(u'HackTheNorth').document(f'questions-{page_id}-done')
 

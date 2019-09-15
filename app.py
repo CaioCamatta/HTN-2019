@@ -1,19 +1,22 @@
 from flask import Flask, request, render_template
 import firebase_admin
 from firebase_admin import credentials,firestore
+import random
 
 app = Flask(__name__, template_folder='static')
 cred = credentials.Certificate("./ServiceAccountKey.json")
 default_app = firebase_admin.initialize_app(cred)
 
 def submit_firebase(id, data):
+    index = random.randrange(0, 999999)
     
     db = firestore.client()
     doc_ref = db.collection(u'HackTheNorth').document(f'questions-{id}')
 
-    doc_ref.set({
-        u'name': f"{data[10]}",
-        u'answers': {
+    print("here")
+    doc_ref.update({
+        f'name_{index}': f"{data[10]}",
+        f'answers_{index}': {
             "1":f"{data[0]}",
             "2":f"{data[1]}",
             "3":f"{data[2]}",

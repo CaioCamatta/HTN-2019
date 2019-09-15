@@ -14,9 +14,9 @@
   position: relative;
   opacity: 0;
   transition: opacity 0.1s ease-in-out;
-  background: lightseagreen;
+  background: #823aa0;
 }
-
+/* E71D36 */
 .loaded.tinder {
   opacity: 1;
 }
@@ -70,7 +70,7 @@
   width: 90vw;
   max-width: 400px;
   height: 70vh;
-  background: linear-gradient(white, lightblue);
+  background: linear-gradient(white, #f6f6f6);
   padding-bottom: 40px;
   border-radius: 8px;
   overflow: hidden;

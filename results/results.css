@@ -1,11 +1,14 @@
 body {
-  background-color: lightgray;
   font-family: 'Noto Sans', sans-serif;
   text-align: center;
   padding: 10px;
+
+
 }
 
+
 .wrapper {
+  padding: 10px;
   max-width: 800px;
   margin: 50px auto;
 }
@@ -16,7 +19,10 @@ h1 {
   margin: 0 0 0.1em 0;
 }
 
-h2 {
+.percent {
+  display: inline;
+}
+.subtitlee {
   font-weight: 200;
   font-size: 0.9em;
   margin: 0 0 50px;
@@ -32,4 +38,14 @@ a {
 
 .question {
   margin-bottom: 70px;
+  text-align: left
+}
+
+h4 {
+  color: #969191;
+}
+
+span {
+  color: green;
+  font-weight: 600;
 }

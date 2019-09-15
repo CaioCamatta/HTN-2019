@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>Awareness HTN</title>
+  <link rel="stylesheet" type="text/css" href="assets/style.css"/>
+  <link rel= "stylesheet" type = "text/css" href = "assets/phoneset.css"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+  <link href="https://fonts.googleapis.com/css?family=Noto+Sans&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/style2.css">
+  <link rel="stylesheet" type="text/css" href="assets/css/default.css" />
+  <link rel="stylesheet" type="text/css" href="assets/css/component.css" /> 
+  <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css'>
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<div class="tinder">
+  <div class="tinder--status">
+    <i class="fa fa-remove"></i>
+    <i class="fa fa-heart"></i>
+  </div>
+
+  <div class="tinder--cards">
+    
+    <div class="tinder--card">
+      <img src="assets/images/htnq1.jpeg">
+      <h3>Hack The North Q1</h3>
+      <p>The total generation of municipal solid waste in 2015 was 262.4 million tons. </p>
+    </div>
+
+    <div class="tinder--card">
+      <img src="assets/images/htnq2.png">
+      <h3>Hack The North Q2</h3>
+      <p>You and Your friend just ate lunch at Hack the North. After eating, you throw your 
+        paper container into the recycling and your friend throws theirs into the garbage. 
+        Was your friend right in throwing out theirs in the garbage?</p>
+    </div>
+    <div class="tinder--card">
+      <img src="assets/images/htnq3.png">
+      <h3>Hack The North Q3</h3>
+      <p>To clean a peanut butter jar, all you have to do is: 
+          Fill with hot water and pour it out.</p>
+    </div>
+    <div class="tinder--card">
+      <img src="assets/images/htnq4.png">
+      <h3>Hack The North Q4</h3>
+      <p>Alkaline Batteries and Rechargeable/ lithium Ion batteries are disposable in the
+        common trash? </p>
+    </div>
+    <div class="tinder--card">
+      <img src="assets/images/htnq5.png">
+      <h3>Hack the North Q5</h3>
+      <p>Are Bioplastics really compostible when they are labeled as compostible?</p>
+    </div>
+    <div class="tinder--card">
+        <img src="assets/images/htnq6.png">
+        <h3>Hack The North Q6</h3>
+        <p>In the Canada-Philippines waste dispute, a Newfoundland recycling company 
+          send 103 labeled household waste containers to Manila, Philippines</p>
+    </div>
+    <div class="tinder--card">
+        <img src="assets/images/htnq7.png">
+        <h3>Hack The North Q7</h3>
+        <p>The 38 square Kilometer Icelandic Glacier, Okjökull has been reduced to a shield volcano
+          with no glacial coverage.</p>
+    </div>
+    <div class="tinder--card">
+        <img class = "qimage" src="assets/images/htnq8.png">
+        <h3>Hack The North Q8 </h3>
+        <p>CFL bulbs (Compound Flourescant Light bulbs) can be thrown out with household waste 
+          because unlike incandescant lights, they do not contain mercury. </p>
+    </div>
+    <div class="tinder--card">
+        <img class = "qimage" src="assets/images/htnq9.png">
+        <h3>Hack The North Q9</h3>
+        <p>Plastic straws are responsible for 46% of all Ocean Plastic and reportedly 640,000 tons 
+          are polluting the ocean</p>
+    </div>
+    <div class="tinder--card">
+        <img class = "qimage" src="assets/images/htnq10.png">
+        <h3>Hack The North Q10</h3>
+        <p>There is an ozone hole in the Upper Stratosphere in Antarctica caused by a depletion of 
+          O3 molocules due to man-made chlorofluorocarbons (CFCs) and halons being realeased
+          into the atmosphere. However, the ozone layer might replenish itself by 2050-2070.</p>
+    </div>
+    <div class="starter-card">
+      <img class = "qimage" src="assets/images/moral.png">
+      <h3>Thank you for participating!!</h3>
+      <p>Results will be shown shortly</p>
+      <form>
+      </br>
+        <input id = "codebt2" style= "position:relative; top: -3em;"placeholder= "Enter Your Name..." type="text" name = "uname"> </br>
+      </br></br>
+        <input type = "submit" style= "position:relative; top: -5em;" id = "subbt" value = "Submit">
+
+
+      </form>
+  </div>
+  </div>
+
+  <div class="tinder--buttons">
+      <button id="nope"><i class="fa fa-times"></i></button>
+      <button id="love"><i class="fa fa-check"></i></button>
+  </div>
+</div>
+<!-- partial -->
+  <script src='https://hammerjs.github.io/dist/hammer.min.js'></script>
+<!-- <script  src="assets/script.js"></script> -->
+<script
+  src="https://code.jquery.com/jquery-3.4.1.min.js"
+  integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+  crossorigin="anonymous"></script>
+<script>
+'use strict';
+
+var arr = []
+var tinderContainer = document.querySelector('.tinder');
+var allCards = document.querySelectorAll('.tinder--card');
+var nope = document.getElementById('nope');
+var love = document.getElementById('love');
+
+function initCards(card, index) {
+  var newCards = document.querySelectorAll('.tinder--card:not(.removed)');
+
+  newCards.forEach(function (card, index) {
+    card.style.zIndex = allCards.length - index;
+    card.style.transform = 'scale(' + (20 - index) / 20 + ') translateY(-' + 30 * index + 'px)';
+    card.style.opacity = (10 - index) / 10;
+  });
+  
+  tinderContainer.classList.add('loaded');
+}
+
+initCards();
+
+allCards.forEach(function (el) {
+  var hammertime = new Hammer(el);
+
+  hammertime.on('pan', function (event) {
+    el.classList.add('moving');
+  });
+
+  hammertime.on('pan', function (event) {
+    if (event.deltaX === 0) return;
+    if (event.center.x === 0 && event.center.y === 0) return;
+
+    tinderContainer.classList.toggle('tinder_love', event.deltaX > 0);
+    tinderContainer.classList.toggle('tinder_nope', event.deltaX < 0);
+
+    var xMulti = event.deltaX * 0.03;
+    var yMulti = event.deltaY / 80;
+    var rotate = xMulti * yMulti;
+
+    event.target.style.transform = 'translate(' + event.deltaX + 'px, ' + event.deltaY + 'px) rotate(' + rotate + 'deg)';
+  });
+
+  hammertime.on('panend', function (event) {
+    el.classList.remove('moving');
+    tinderContainer.classList.remove('tinder_love');
+    tinderContainer.classList.remove('tinder_nope');
+
+    var moveOutWidth = document.body.clientWidth;
+    var keep = Math.abs(event.deltaX) < 80 || Math.abs(event.velocityX) < 0.5;
+
+    event.target.classList.toggle('removed', !keep);
+
+    if (keep) {
+      event.target.style.transform = '';
+    } else {
+      var endX = Math.max(Math.abs(event.velocityX) * moveOutWidth, moveOutWidth);
+      var toX = event.deltaX > 0 ? endX : -endX;
+      var endY = Math.abs(event.velocityY) * moveOutWidth;
+      var toY = event.deltaY > 0 ? endY : -endY;
+      var xMulti = event.deltaX * 0.03;
+      var yMulti = event.deltaY / 80;
+      var rotate = xMulti * yMulti;
+
+      var yesorno = event.deltaX > 0 ? true: false;
+      arr.push(yesorno)
+      console.log(arr)
+      event.target.style.transform = 'translate(' + toX + 'px, ' + (toY + event.deltaY) + 'px) rotate(' + rotate + 'deg)';
+      initCards();
+    }
+  });
+});
+
+function createButtonListener(love) {
+  return function (event) {
+    var cards = document.querySelectorAll('.tinder--card:not(.removed)');
+    var moveOutWidth = document.body.clientWidth * 1.5;
+
+    if (!cards.length) return false;
+
+    var card = cards[0];
+
+    card.classList.add('removed');
+
+    if (love) {
+      card.style.transform = 'translate(' + moveOutWidth + 'px, -100px) rotate(-30deg)';
+      arr.push(true)
+    } else {
+      card.style.transform = 'translate(-' + moveOutWidth + 'px, -100px) rotate(30deg)';
+      arr.push(false)
+    }
+    console.log(arr)
+    initCards();
+
+    event.preventDefault();
+  };
+}
+
+var nopeListener = createButtonListener(false);
+var loveListener = createButtonListener(true);
+
+nope.addEventListener('click', nopeListener);
+love.addEventListener('click', loveListener);
+
+
+$(document).ready( function() {
+  $('#submit').click(function() {
+    $.ajax({
+      type: 'POST',
+      contentType: 'application/json',
+      data: JSON.stringify(arr),
+      dataType: 'json',
+    });
+  });
+});
+</script>
+</body>
+</html>
